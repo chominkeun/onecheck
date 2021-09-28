@@ -1,0 +1,17 @@
+deploy-to-server:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo 'hello world nuxt onecheck'
+    - pwd
+    - cd onechk
+    - whoami
+    - yarn install
+    - yarn build
+    - yarn generate
+    - pm2 list
+    - pm2 reload all
+    - pm2 list
+  tags:
+    - onecheck-deploy

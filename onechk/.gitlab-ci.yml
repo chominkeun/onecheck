@@ -1,0 +1,9 @@
+deploy-to-server:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo 'hello world2223!'
+  tags:
+    - runner-test2
+

@@ -1,0 +1,249 @@
+@charset 'utf-8';
+@import './style.scss';
+.example-custom-control {
+  background: #fff;
+  padding: 0 0.5em;
+  border: 1px solid #aaa;
+  border-radius: 0.1em;
+  font-size: 17px;
+  top: -9px;
+}
+
+.first .first-top2 {
+  width: 100%;
+  height: 40px;
+  background: #4f555f;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+  line-height: 40px;
+}
+
+.first .first-top {
+  width: 100%;
+  height: 85px;
+  background: #4f555f;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+  line-height: 85px;
+}
+
+.floors-container li button {
+  display: block;
+  width: 100%;
+  height: 45px;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: rgb(131, 131, 131);
+}
+
+.floors-container li button.on {
+  background: #fff;
+  color: #454545;
+}
+
+/* Modal */
+.modal,
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.overlay {
+  opacity: 0.5;
+  background-color: black;
+}
+
+.modal-card {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: white;
+  min-height: 700px;
+  opacity: 1;
+}
+
+/* 화면 분할 */
+.first {
+  height: 765px;
+  background-color: #5a5656;
+  float: left;
+  width: 5%;
+  box-sizing: border-box;
+  overflow: auto;
+  -ms-overflow-style: none;
+}
+
+.first::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+}
+
+.second {
+  height: 765px;
+  background-color: white;
+  float: left;
+  width: 21%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.third {
+  display: flex;
+  height: 765px;
+  background-color: #f8f2f5;
+  float: right;
+  width: 74%;
+  box-sizing: border-box;
+}
+
+/* 실내도 추가 버튼 스타일 */
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px dotted black;
+  font-size: 16px;
+  text-align: center;
+  line-height: 200px;
+}
+
+.mod-image {
+  position: fixed;
+  top: 745px;
+  right: 200px;
+  border: 1px solid #aaa;
+  border-radius: 0.1em;
+  font-size: 18px;
+  padding: 6px 25px;
+  background-color: #e77529;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.add-image {
+  position: fixed;
+  top: 680px;
+  right: 686px;
+  border: 1px solid #aaa;
+  border-radius: 0.1em;
+  font-size: 18px;
+  padding: 6px 25px;
+  background-color: #e77529;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.sensorInfo {
+  font-size: 25px;
+  padding: 15px;
+}
+
+.saveButton {
+  background-color: #dd6311;
+  color: white;
+  border: 1px solid #aaa;
+  border-radius: 0.1em;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+.delButton {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #aaa;
+  border-radius: 0.1em;
+  font-size: 15px;
+  border-radius: 4px;
+  margin-right: 10px;
+  padding: 5px 15px;
+}
+
+.searchResult {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Lpopup-Container {
+  width: 300px;
+  height: 100px;
+}
+
+.Lpopup-Container-OutMode {
+  width: 350px;
+  height: 30px;
+}
+
+.Lpopup-Container .Lpopup-ImageContainer {
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  float: left;
+}
+
+.Lpopup-Container-OutMode .Lpopup-ImageContainer-OutMode {
+  width: 20%;
+  text-align: center;
+  height: 100%;
+  float: left;
+}
+
+.Lpopup-Container-OutMode .Lpopup-ContentContainer-OutMode {
+  width: 80%;
+  padding-top: 5px;
+  float: right;
+}
+
+.Lpopup-Container-OutMode .Lpopup-ContentContainer-OutMode .leftContent {
+  width: 70%;
+  float: left;
+}
+
+.Lpopup-Container-OutMode .Lpopup-ContentContainer-OutMode .rightContent {
+  width: 30%;
+  float: right;
+}
+
+.Lpopup-Container .Lpopup-ContentContainer {
+  width: 70%;
+  padding-left: 10px;
+  float: right;
+}
+
+.Lpopup-Container .Lpopup-ContentContainer ul {
+  padding: 10px;
+}
+
+.Lpopup-Container .Lpopup-ContentContainer ul li {
+  list-style-type: circle;
+}
+
+.Lpopup-Container .Lpopup-ContentContainer .Lpopup-Line {
+  width: 100%;
+  height: 0px;
+  border: 1px solid #003458;
+  background: #003458;
+}
+
+.Lpopup-Container .Lpopup-ImageContainer image {
+  height: 100%;
+}

@@ -1,0 +1,167 @@
+@charset 'utf-8';
+
+@mixin font-face($family,$file,$weight,$style:normal){
+  $path : '~assets/font/' + $file;
+  @font-face{
+    font-family: $family;
+    src: url($path + '.eot');
+    src:url($path + '.eot?#iefix') format("embedded-opentype"),
+        url($path + '.woff2') format('woff2'),
+        url($path + '.woff') format('woff');
+        // url($path + '.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+//prefix
+@mixin prefix($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    // @if not index($prefixes, $prefix) {
+    //   @warn "Unknown prefix #{$prefix}.";
+    // }
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+@mixin icon-draw($name, $w, $h, $bg){
+  $path : '~assets/images/';  
+  .i-#{$name}{width:$w;height:$h;background:url(#{$path}#{$bg}) no-repeat 0 0;} 
+}
+
+@mixin placeholder {
+  &:-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
+  }
+}
+
+
+
+//clear
+@mixin clear {
+  &:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+  }
+}
+
+//ellipsis
+@mixin ell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//inline block
+@mixin iblock($va: middle) {
+  display: inline-block;
+  vertical-align: $va;
+}
+
+//flex
+@mixin flexbox($align: center, $justify: flex-start, $dir: row, $wrap: nowrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $dir;
+  flex-wrap: $wrap;  
+}
+@mixin flexInline($align: center, $justify: center) {
+  display: inline-flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin posCenter($top:50%, $left:50%){
+  position:absolute;top:$top;left:$left;
+  transform:translate(-$left, -$top);-webkit-transform:translate(-$left, -$top);
+}
+
+
+//box-sizing
+@mixin sizing($type: border-box) {
+  box-sizing: $type;
+}
+
+// background
+@mixin bgImg($name, $positon: 0 0, $size: auto 100%) {
+  background: url("~assets/images/" + $name) $positon no-repeat;
+  background-size: $size;
+}
+@mixin bgSvg($bg, $size: auto 100%, $positon: 0 0) {
+  background: url($bg) no-repeat $positon;
+  background-size: $size;
+}
+
+//offscreen
+@mixin offscreen {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+@mixin btn-style{
+  @content;
+}
+@mixin btn-type($name, $h, $fs, $fw:normal){
+  .#{$name}{height:$h;font-size:$fs;font-weight:$fw;}
+}
+@mixin btn-st($name, $c, $bg, $br, $fw:normal){
+  [class*=btn-type].#{$name}{color:$c;background:$bg;border:1px solid $br;}
+}
+
+
+@mixin scroll {
+  // chrome
+  &::-webkit-scrollbar {
+    width: 4px;
+    @include round(30px);
+  }
+  &::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    @include round(30px);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #999;
+    @include round(30px);
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  // ie
+  scrollbar-base-color: #fff;
+  scrollbar-face-color: #999;
+  scrollbar-3dlight-color: #fff;
+  scrollbar-highlight-color: #fff;
+  scrollbar-track-color: #e1e1e1;
+  scrollbar-arrow-color: #999;
+  scrollbar-shadow-color: #999;
+  scrollbar-darkshadow-color: #fff;
+  // firefox
+  scrollbar-width: 4px;
+  scrollbar-color: #e1e1e1;
+}

@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+body {
+  background: #f6f6f6;
+  color: #333;
+}
+
+.inner-wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 79px;
+  background: #fff;
+}
+.header .inner-wrap {
+  height: 100%;
+  @include flexbox(center, center);
+}
+.header .right {
+  height: 100%;
+  margin-left: auto;
+  @include flexbox(center, flex-end);
+}
+.header .logo img {
+  height: 46px;
+}
+.header .gnb {
+  height: 100%;
+  @include flexInline;
+}
+.header .gnb li {
+  height: 100%;
+}
+.header .gnb li a {
+  height: 100%;
+  display: block;
+  padding: 0 35px;
+  font-size: 17px;
+  @include flexbox(center, center);
+}
+.header .gnb li a:hover {
+  color: #f08613;
+}
+.header .login-menu {
+  margin-left: 20px;
+}
+.header .login-menu a {
+  position: relative;
+  font-size: 13px;
+  font-size: 13px;
+  padding: 0 10px;
+}
+.header .login-menu a ~ a:before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: #d3d3d3;
+  @include posCenter(50%, 0);
+}
+.header .login-menu a:hover {
+  color: #f08613;
+}
+.header .mypagen-menu {
+  height: 100%;
+  margin-left: 12px;
+}
+.header .mypagen-menu a {
+  display: block;
+  height: 100%;
+  width: 130px;
+  @include flexbox(center, center);
+  background: #ef7f06;
+  color: #fff;
+  font-size: 15px;
+}
+
+.footer {
+  margin-top: 80px;
+  padding: 60px 0;
+  background: #454545;
+}
+.footer .footer-menu {
+  @include flexInline;
+}
+.footer .footer-menu li {
+  position: relative;
+}
+.footer .footer-menu li ~ li {
+  margin-left: 18px;
+  padding-left: 18px;
+}
+.footer .footer-menu li ~ li:after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 12px;
+  background: #717171;
+  @include posCenter(50%, 0);
+}
+.footer .footer-menu li a {
+  color: #f2f2f2;
+  font-size: 15px;
+}
+.footer .address {
+  margin-top: 22px;
+  color: #8e8e8e;
+}
+.footer .address .addr {
+  margin-left: 15px;
+}
+.footer .address .tel {
+  margin-left: 15px;
+}
+.footer .copyright {
+  margin-top: 10px;
+  color: #8e8e8e;
+}
+.footer .copyright b {
+  font-weight: 600;
+}
+
+.cont-box {
+  padding: 0 115px 115px 115px;
+  background: #fff;
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
